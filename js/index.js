@@ -82,3 +82,7 @@ window.addEventListener("load", event => {
   body.style.transform = "rotate(720deg)";
   body.style.transition = "transform 2s";
 });
+
+window.addEventListener("scroll", event => {
+  body.style.transform = "scale(0.5)";
+});
