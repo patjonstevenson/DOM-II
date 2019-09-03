@@ -11,3 +11,13 @@ scaleDown.addEventListener("mouseleave", e => {
   scaleDown.style.transform = "scale(1)";
   scaleDown.style.transition = "transform 0.5s";
 });
+
+// Link click rotation
+const bigRed = document.querySelectorAll(".nav-link");
+bigRed.forEach(elem =>
+  elem.addEventListener("click", e => {
+    elem.style.background = "red";
+    elem.style.padding = "2.5%";
+    elem.style.transform = "scale(1.3)";
+  })
+);
