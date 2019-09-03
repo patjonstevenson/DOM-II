@@ -21,3 +21,10 @@ bigRed.forEach(elem =>
     elem.style.transform = "scale(1.3)";
   })
 );
+
+const switchSides = Array.from(document.getElementsByClassName("img-content"));
+switchSides.forEach(elem =>
+  elem.addEventListener("dblclick", e => {
+    elem.parentElement.style.flexDirection = "row-reverse";
+  })
+);
