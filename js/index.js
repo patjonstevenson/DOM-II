@@ -12,7 +12,7 @@ scaleDown.addEventListener("mouseleave", e => {
   scaleDown.style.transition = "transform 0.5s";
 });
 
-// Link click rotation
+// Link click red and scale
 const bigRed = document.querySelectorAll(".nav-link");
 bigRed.forEach(elem =>
   elem.addEventListener("click", e => {
@@ -20,8 +20,15 @@ bigRed.forEach(elem =>
     elem.style.padding = "2.5%";
     elem.style.transform = "scale(1.3)";
     event.preventDefault(); // Prevent page from reloading
+    event.stopPropagation(); // Stop propogation
   })
 );
+
+// Turn nav green
+const greenHeader = document.querySelector(".main-navigation");
+greenHeader.addEventListener("click", event => {
+  event.target.style.background = "green";
+});
 
 const switchSides = Array.from(document.getElementsByClassName("img-content"));
 switchSides.forEach(elem =>
