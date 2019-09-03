@@ -19,6 +19,7 @@ bigRed.forEach(elem =>
     elem.style.background = "red";
     elem.style.padding = "2.5%";
     elem.style.transform = "scale(1.3)";
+    event.preventDefault(); // Prevent page from reloading
   })
 );
 
@@ -28,3 +29,44 @@ switchSides.forEach(elem =>
     elem.parentElement.style.flexDirection = "row-reverse";
   })
 );
+
+const newForm = document.createElement("form");
+newForm.innerHTML = `Destination:<br>`;
+newForm.style.fontSize = "2rem";
+newForm.style.padding = "2.5%";
+const newInput = document.createElement("input");
+newInput.type = "text";
+newInput.name = "destination";
+newForm.appendChild(newInput);
+
+// Add form on mouseover
+const destination = document.querySelector(".content-destination");
+destination.addEventListener("mouseover", e => {
+  destination.appendChild(newForm);
+});
+
+// Scale form field up on focus
+newInput.addEventListener("focus", event => {
+  event.target.style.transform = "scale(2)";
+  event.target.style.transition = "transform 5s";
+  event.target.style.background = "limegreen";
+  console.log("Focus");
+});
+
+// Scale form field down on blur
+newInput.addEventListener("blur", event => {
+  event.target.style.transform = "scale(0.5)";
+  event.target.style.transition = "transform 5s";
+  event.target.style.background = "red";
+  console.log("Blur");
+});
+
+/*
+// Prevent nav items from reloading page
+const navItems = document.querySelectorAll(".nav-link");
+navItems.forEach(item =>
+  item.addEventListener("click", event => {
+    event.preventDefault();
+  })
+);
+*/
