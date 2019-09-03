@@ -76,3 +76,9 @@ newInput.addEventListener("select", event => {
   );
   destination.appendChild(inputText);
 });
+
+const body = document.querySelector("body");
+window.addEventListener("load", event => {
+  body.style.transform = "rotate(720deg)";
+  body.style.transition = "transform 2s";
+});
