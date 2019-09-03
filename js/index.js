@@ -68,12 +68,11 @@ newInput.addEventListener("blur", event => {
   console.log("Blur");
 });
 
-/*
-// Prevent nav items from reloading page
-const navItems = document.querySelectorAll(".nav-link");
-navItems.forEach(item =>
-  item.addEventListener("click", event => {
-    event.preventDefault();
-  })
-);
-*/
+const inputText = document.createElement("h1");
+newInput.addEventListener("select", event => {
+  inputText.textContent = event.target.value.substring(
+    event.target.selectionStart,
+    event.target.selectionEnd
+  );
+  destination.appendChild(inputText);
+});
